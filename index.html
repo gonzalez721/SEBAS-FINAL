@@ -1,36 +1,3 @@
-<style id="qr-video-controls-hide">
-</style>
-<style id="tribuna-select-style">
-  /* Solo para el select de TRIBUNA */
-  #seatTribuna { 
-    -webkit-appearance: none; -moz-appearance: none; appearance: none; 
-    background: linear-gradient(180deg, rgba(31,41,55,.85), rgba(17,24,39,.95));
-    color: #fff; 
-    border: 1px solid #374151; 
-    border-radius: 12px; 
-    padding: 0.65rem 2.25rem 0.65rem 0.9rem; 
-    font-weight: 600; 
-    line-height: 1.2; 
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 10px 18px rgba(0,0,0,.35);
-    transition: border-color .2s ease, box-shadow .2s ease, background .2s ease, transform .06s ease;
-  }
-  #seatTribuna:hover { border-color: #4B5563; }
-  #seatTribuna:focus { outline: none; border-color: #D32F2F; box-shadow: 0 0 0 3px rgba(211,47,47,.35), inset 0 1px 0 rgba(255,255,255,.06); }
-  #seatTribuna:active { transform: translateY(1px); }
-  #seatTribuna:disabled { opacity: .6; cursor: not-allowed; }
-  #seatTribuna::-ms-expand { display: none; } /* IE arrow */
-  #seatTribuna option { background: #0B1220; color: #fff; }
-  /* Oculta cualquier overlay/controles por defecto del <video> en iOS Safari */
-  #qrVideo::-webkit-media-controls-start-playback-button,
-  #qrVideo::-webkit-media-controls,
-  video::-webkit-media-controls {
-    display: none !important;
-    -webkit-appearance: none;
-    opacity: 0 !important; /* evita destellos */
-  }
-  /* Clase para ocultar el video hasta que la cámara esté lista */
-  #qrVideo.media-hidden { opacity: 0; }
-</style>
 <!DOCTYPE html>
 
 <html lang="es">
@@ -56,6 +23,180 @@
             }
         }
     </script>
+
+    <style id="qr-video-controls-hide">
+    </style>
+    <style id="tribuna-select-style">
+      /* Solo para el select de TRIBUNA */
+      #seatTribuna {
+        -webkit-appearance: none; -moz-appearance: none; appearance: none;
+        background: linear-gradient(180deg, rgba(31,41,55,.85), rgba(17,24,39,.95));
+        color: #fff;
+        border: 1px solid #374151;
+        border-radius: 12px;
+        padding: 0.65rem 2.25rem 0.65rem 0.9rem;
+        font-weight: 600;
+        line-height: 1.2;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 10px 18px rgba(0,0,0,.35);
+        transition: border-color .2s ease, box-shadow .2s ease, background .2s ease, transform .06s ease;
+      }
+      #seatTribuna:hover { border-color: #4B5563; }
+      #seatTribuna:focus { outline: none; border-color: #D32F2F; box-shadow: 0 0 0 3px rgba(211,47,47,.35), inset 0 1px 0 rgba(255,255,255,.06); }
+      #seatTribuna:active { transform: translateY(1px); }
+      #seatTribuna:disabled { opacity: .6; cursor: not-allowed; }
+      #seatTribuna::-ms-expand { display: none; } /* IE arrow */
+      #seatTribuna option { background: #0B1220; color: #fff; }
+      /* Oculta cualquier overlay/controles por defecto del <video> en iOS Safari */
+      #qrVideo::-webkit-media-controls-start-playback-button,
+      #qrVideo::-webkit-media-controls,
+      video::-webkit-media-controls {
+        display: none !important;
+        -webkit-appearance: none;
+        opacity: 0 !important; /* evita destellos */
+      }
+      /* Clase para ocultar el video hasta que la cámara esté lista */
+      #qrVideo.media-hidden { opacity: 0; }
+    </style>
+
+    <style id="button-compact-style">
+      button {
+        white-space: normal !important;
+        overflow-wrap: anywhere;
+        line-height: 1.35;
+      }
+      button[class~="text-2xl"],
+      button[class~="text-xl"],
+      button[class~="text-lg"] {
+        font-size: 1.05rem !important;
+      }
+
+      button[class~="text-base"] {
+        font-size: 0.95rem !important;
+      }
+
+      button[class~="text-sm"] {
+        font-size: 0.8rem !important;
+      }
+
+      button[class~="text-xs"],
+      button[class~="text-[0.75rem]"] {
+        font-size: 0.7rem !important;
+      }
+
+      button[class~="py-5"] {
+        padding-top: 0.95rem !important;
+        padding-bottom: 0.95rem !important;
+      }
+
+      button[class~="py-4"] {
+        padding-top: 0.85rem !important;
+        padding-bottom: 0.85rem !important;
+      }
+
+      button[class~="py-3"] {
+        padding-top: 0.65rem !important;
+        padding-bottom: 0.65rem !important;
+      }
+
+      button[class~="py-2.5"] {
+        padding-top: 0.55rem !important;
+        padding-bottom: 0.55rem !important;
+      }
+
+      button[class~="py-2"] {
+        padding-top: 0.45rem !important;
+        padding-bottom: 0.45rem !important;
+      }
+
+      button[class~="py-1.5"] {
+        padding-top: 0.32rem !important;
+        padding-bottom: 0.32rem !important;
+      }
+
+      button[class~="py-1"] {
+        padding-top: 0.24rem !important;
+        padding-bottom: 0.24rem !important;
+      }
+
+      button[class~="py-0.5"] {
+        padding-top: 0.18rem !important;
+        padding-bottom: 0.18rem !important;
+      }
+
+      button[class~="px-6"] {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+      }
+
+      button[class~="px-5"] {
+        padding-left: 1.05rem !important;
+        padding-right: 1.05rem !important;
+      }
+
+      button[class~="px-4"] {
+        padding-left: 0.9rem !important;
+        padding-right: 0.9rem !important;
+      }
+
+      button[class~="px-3"] {
+        padding-left: 0.7rem !important;
+        padding-right: 0.7rem !important;
+      }
+
+      button[class~="px-2.5"] {
+        padding-left: 0.58rem !important;
+        padding-right: 0.58rem !important;
+      }
+
+      button[class~="px-2"] {
+        padding-left: 0.48rem !important;
+        padding-right: 0.48rem !important;
+      }
+
+      button[class~="p-3"] {
+        padding: 0.65rem !important;
+      }
+
+      button[class~="p-2.5"] {
+        padding: 0.55rem !important;
+      }
+
+      button[class~="p-2"] {
+        padding: 0.45rem !important;
+      }
+
+      button[class~="p-1.5"] {
+        padding: 0.32rem !important;
+      }
+
+      button[class~="p-1"] {
+        padding: 0.24rem !important;
+      }
+
+      button[class~="rounded-3xl"] {
+        border-radius: 1.35rem !important;
+      }
+
+      button[class~="rounded-2xl"] {
+        border-radius: 1rem !important;
+      }
+
+      button[class~="rounded-xl"] {
+        border-radius: 0.8rem !important;
+      }
+
+      button[class~="rounded-lg"] {
+        border-radius: 0.65rem !important;
+      }
+
+      button[class~="rounded-md"] {
+        border-radius: 0.45rem !important;
+      }
+
+      button[class~="rounded"] {
+        border-radius: 0.4rem !important;
+      }
+    </style>
 
     <script id="profile-script">
     (function() {
@@ -208,7 +349,9 @@
         profileModal?.classList.remove('hidden');
         profileModal?.classList.add('flex');
         window.trapFocus?.(profileModal);
-        feather.replace();
+        if (window.feather && typeof window.feather.replace === 'function') {
+          window.feather.replace();
+        }
       }
 
       // Exponer apertura de perfil para menú global
@@ -332,8 +475,8 @@
     --text: #E5E7EB;
     --radius: 16px;
     --space-1: .25rem; --space-2: .5rem; --space-3: .75rem; --space-4: 1rem; --space-6: 1.5rem;
-    --font-size-base: 16px;
-    --line-height-base: 1.5;
+    --font-size-base: clamp(12.5px, 0.8vw + 7px, 14px);
+    --line-height-base: 1.45;
     --shadow-soft: 0 8px 32px rgba(0,0,0,0.18), 0 1.5px 0 rgba(255,255,255,0.04) inset;
     --shadow-btn: 0 2px 12px rgba(211,47,47,0.13), 0 1.5px 0 rgba(255,255,255,0.06) inset;
     --transition: all 180ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -353,22 +496,11 @@
     min-height: 100vh;
     scroll-behavior: smooth;
   }
-  /* Responsive container for main content */
-  main {
-    width: 100%;
-    max-width: 420px;
+  /* Responsive container for the authentication panel */
+  .auth-shell {
+    width: min(100%, clamp(20rem, 85vw, 36rem));
     margin: 0 auto;
-    padding: 1.5rem 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 80vh;
-  }
-  @media (min-width: 640px){
-    main { max-width: 540px; padding: 2.5rem 2rem; }
-  }
-  @media (min-width: 1024px){
-    main { max-width: 700px; padding: 3rem 2.5rem; }
+    padding: clamp(1.35rem, 2.5vw, 1.95rem) !important;
   }
   /* Glassmorphism cards/panels */
   .bg-america-dark\/90, .bg-america-dark\/95, .bg-gray-900.rounded-xl, .glass-card {
@@ -611,7 +743,8 @@
     }
   }
   /* Responsive header/footer */
-  header, footer {
+  body:not(.dashboard-mode) header,
+  body:not(.dashboard-mode) footer {
     width: 100%;
     max-width: 700px;
     margin: 0 auto;
@@ -619,16 +752,7 @@
     padding-right: 1rem;
   }
   /* Responsive for login section */
-  #loginSection > main {
-    max-width: 420px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 1.5rem 0.5rem;
-  }
   @media (max-width: 480px){
-    #loginSection > main {
-      padding: 1rem 0.2rem;
-    }
     .bg-america-dark\/90, .bg-america-dark\/95, .bg-gray-900.rounded-xl {
       padding: 1.1rem !important;
     }
@@ -963,7 +1087,10 @@ html,body{ background:#05070f !important; }
   </style>
 <style id="quick-pretty-pass">
   /* Quick visual polish focused on the login screen */
-  #loginSection main{ max-width: 440px; }
+  #loginSection{
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+  }
   #loginSection [class*="bg-america-dark"]{ border-radius: 18px !important; box-shadow: 0 20px 60px rgba(0,0,0,.35) !important; }
   #loginSection h1{ letter-spacing:.2px; line-height:1.18; }
   #loginSection p{ color:#d1d5db; }
@@ -995,6 +1122,106 @@ html,body{ background:#05070f !important; }
   /* QR modal frame subtle glow */
   #qrModal .rounded-xl{ box-shadow: 0 18px 50px rgba(0,0,0,.45) !important; }
   #qrModal [class*="border-white"]{ box-shadow: 0 0 0 1px rgba(255,255,255,.4) inset; }
+</style>
+<style id="login-comfort">
+  #loginSection {
+    --login-heading: clamp(1.55rem, 1.4vw + 1.15rem, 1.95rem);
+    --login-subheading: clamp(1.1rem, 1vw + 0.95rem, 1.45rem);
+    --login-body: clamp(0.82rem, 0.35vw + 0.74rem, 0.92rem);
+    --login-small: clamp(0.7rem, 0.3vw + 0.64rem, 0.78rem);
+  }
+  #loginSection .login-wrapper {
+    gap: clamp(1.75rem, 3.5vw, 2.6rem);
+  }
+  #loginSection .login-aside {
+    gap: clamp(1.5rem, 3vw, 2.25rem);
+  }
+  #loginSection .login-aside p,
+  #loginSection .login-aside li {
+    font-size: clamp(0.78rem, 0.35vw + 0.7rem, 0.9rem) !important;
+    line-height: 1.4;
+  }
+  #loginSection .login-aside .rounded-3xl,
+  #loginSection .login-aside .rounded-2xl {
+    padding: clamp(1.1rem, 2.8vw, 1.6rem) !important;
+  }
+  #loginSection [class~="text-4xl"] {
+    font-size: var(--login-heading) !important;
+    line-height: 1.2;
+  }
+  #loginSection [class~="text-3xl"] {
+    font-size: clamp(1.25rem, 1.2vw + 0.95rem, 1.6rem) !important;
+    line-height: 1.22;
+  }
+  #loginSection [class~="text-xl"] {
+    font-size: var(--login-subheading) !important;
+    line-height: 1.25;
+  }
+  #loginSection [class~="text-lg"] {
+    font-size: clamp(0.96rem, 0.45vw + 0.88rem, 1.1rem) !important;
+  }
+  #loginSection [class~="text-base"] {
+    font-size: var(--login-body) !important;
+    line-height: 1.42;
+  }
+  #loginSection [class~="text-sm"] {
+    font-size: var(--login-small) !important;
+  }
+  #loginSection [class~="text-xs"] {
+    font-size: clamp(0.66rem, 0.3vw + 0.6rem, 0.72rem) !important;
+    letter-spacing: 0.24em !important;
+  }
+  #loginSection .login-panel {
+    padding: clamp(1.35rem, 3vw, 1.9rem) !important;
+    border-radius: 20px !important;
+  }
+  #loginSection .login-panel button,
+  #loginSection .login-panel .btn {
+    font-size: clamp(0.78rem, 0.38vw + 0.7rem, 0.88rem) !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #loginSection .login-panel .space-y-8 > * + * {
+    margin-top: clamp(1.15rem, 2vw, 1.6rem) !important;
+  }
+  #loginSection .login-panel [class*="space-y-4"] > * + * {
+    margin-top: clamp(0.75rem, 1.6vw, 1rem) !important;
+  }
+  #loginSection .login-panel input,
+  #loginSection .login-panel select {
+    padding: 0.55rem 0.85rem !important;
+    font-size: var(--login-body);
+  }
+  #loginSection .login-panel label {
+    font-size: var(--login-small);
+    letter-spacing: 0.02em;
+  }
+  #loginSection .login-panel button {
+    min-height: 2.5rem;
+    padding: 0.55rem 0.95rem !important;
+  }
+  #loginSection .login-panel .rounded-full {
+    letter-spacing: 0.22em !important;
+  }
+  #loginSection .login-stat-grid {
+    gap: clamp(0.75rem, 2.5vw, 1.1rem) !important;
+  }
+  #loginSection .login-stat-grid > div {
+    padding: clamp(0.85rem, 2.3vw, 1.2rem) !important;
+  }
+  #loginSection .login-stat-grid h3 {
+    font-size: clamp(0.92rem, 0.4vw + 0.84rem, 1.05rem) !important;
+  }
+  #loginSection .login-stat-grid p,
+  #loginSection .login-stat-grid span {
+    font-size: clamp(0.72rem, 0.3vw + 0.66rem, 0.85rem) !important;
+  }
+  @media (min-width: 1024px) {
+    #loginSection .login-wrapper {
+      gap: clamp(2rem, 4vw, 3.25rem);
+    }
+  }
 </style>
 <style id="minimal-dashboard-refresh">
   :root {
@@ -1489,7 +1716,7 @@ html,body{ background:#05070f !important; }
     #iosNfcModal, #iosNfcBackdrop{ min-height:100dvh; }
   }
 </style>
-<div id="loginSection" class="relative isolate min-h-screen overflow-hidden">
+<div id="loginSection" class="relative isolate min-h-screen overflow-x-hidden overflow-y-auto lg:overflow-hidden">
   <div class="absolute inset-0 -z-10">
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(248,113,113,0.22),_transparent_55%)]"></div>
     <div class="absolute inset-0 bg-[linear-gradient(130deg,_rgba(2,6,23,0.92),_rgba(88,28,135,0.35),_rgba(15,23,42,0.9))]"></div>
@@ -1497,8 +1724,8 @@ html,body{ background:#05070f !important; }
     <div class="absolute inset-y-0 right-0 hidden w-2/3 bg-gradient-to-l from-black/70 to-transparent lg:block"></div>
   </div>
   <div class="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 py-12 sm:px-10 lg:px-16">
-    <div class="grid flex-1 items-center gap-12 py-6 lg:grid-cols-[1.08fr_minmax(0,1fr)] lg:py-12">
-      <aside class="order-2 space-y-10 text-slate-100 lg:order-1">
+    <div class="grid flex-1 items-start gap-12 py-6 lg:grid-cols-[1.08fr_minmax(0,1fr)] lg:items-center lg:py-12 login-wrapper">
+      <aside class="order-2 space-y-10 text-slate-100 lg:order-1 login-aside">
         <div class="rounded-3xl border border-white/10 bg-white/10 p-8 shadow-2xl backdrop-blur-2xl">
           <span class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/70">
             <i data-feather="zap" class="h-4 w-4"></i>
@@ -1506,7 +1733,7 @@ html,body{ background:#05070f !important; }
           </span>
           <h2 class="mt-6 text-4xl font-semibold leading-tight text-white sm:text-[2.6rem]">Tu acceso al Pascual, sin filas ni complicaciones.</h2>
           <p class="mt-4 text-base text-white/70">Recarga tu manilla, verifica tu QR y disfruta beneficios exclusivos diseñados para la hinchada escarlata.</p>
-          <div class="mt-8 grid gap-4 sm:grid-cols-3">
+          <div class="mt-8 grid gap-4 sm:grid-cols-3 login-stat-grid">
             <div class="rounded-2xl border border-white/20 bg-black/30 px-4 py-5 text-white/80 shadow-lg backdrop-blur">
               <p class="text-xs uppercase tracking-[0.25em] text-white/50">Ingresos hoy</p>
               <p class="mt-2 text-3xl font-semibold text-white">12.542</p>
@@ -1575,8 +1802,8 @@ html,body{ background:#05070f !important; }
           </div>
         </div>
       </aside>
-      <div class="order-1 w-full max-w-xl lg:order-2 lg:justify-self-end">
-        <div role="main" class="rounded-3xl border border-white/10 bg-slate-950/70 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
+      <div class="order-1 w-full lg:order-2 lg:justify-self-end">
+        <div role="main" class="auth-shell rounded-3xl border border-white/10 bg-slate-950/70 p-6 shadow-2xl backdrop-blur-xl sm:p-8 login-panel">
           <div class="space-y-8">
             <div class="space-y-4 text-center">
               <div class="relative mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-rose-500 via-red-500 to-red-600 shadow-2xl ring-4 ring-white/10">
@@ -2921,8 +3148,14 @@ html,body{ background:#05070f !important; }
     </div>
   </div>
 <script>
-        feather.replace();
-        
+        const runFeatherReplace = () => {
+          if (window.feather && typeof window.feather.replace === 'function') {
+            window.feather.replace();
+          }
+        };
+
+        runFeatherReplace();
+
         let qrPurpose = 'login';
         
         // Function to extract NFC ID from NDEF records
@@ -2959,7 +3192,7 @@ html,body{ background:#05070f !important; }
             // Show loading state
             nfcButton.innerHTML = '<i data-feather="loader" class="w-5 h-5 animate-spin"></i><span>Leyendo manilla NFC...</span>';
             nfcButton.setAttribute('aria-busy', 'true');
-            feather.replace();
+            runFeatherReplace();
 
             const controller = new AbortController();
             let reader;
@@ -3027,7 +3260,7 @@ html,body{ background:#05070f !important; }
                 }
                 nfcButton.innerHTML = '<i data-feather="radio" class="w-5 h-5"></i><span>Escanear manilla NFC</span>';
                 nfcButton.removeAttribute('aria-busy');
-                feather.replace();
+                runFeatherReplace();
             }
         }
 
@@ -3037,7 +3270,7 @@ html,body{ background:#05070f !important; }
 
             button.innerHTML = '<i data-feather="loader" class="w-5 h-5 animate-spin"></i><span>Leyendo NFC...</span>';
             button.setAttribute('aria-busy', 'true');
-            feather.replace();
+            runFeatherReplace();
 
             const controller = new AbortController();
             let reader;
@@ -3085,7 +3318,7 @@ html,body{ background:#05070f !important; }
                 }
                 button.innerHTML = '<i class="w-5 h-5" data-feather="radio"></i><span>NFC</span>';
                 button.removeAttribute('aria-busy');
-                feather.replace();
+                runFeatherReplace();
             }
         }
 
@@ -3332,7 +3565,7 @@ html,body{ background:#05070f !important; }
           if (!topUpModal) return;
           topUpModal.classList.remove('hidden');
           topUpModal.classList.add('flex');
-          feather.replace();
+          runFeatherReplace();
         }
         function closeTopUp(){
           if (!topUpModal) return;
@@ -3408,7 +3641,7 @@ html,body{ background:#05070f !important; }
           const modal = document.getElementById('verificationModal');
           modal.classList.remove('hidden');
           modal.classList.add('flex');
-          feather.replace();
+          runFeatherReplace();
         }
         function closeVerification() {
           const modal = document.getElementById('verificationModal');
@@ -3426,7 +3659,7 @@ html,body{ background:#05070f !important; }
           payBtn.disabled = true;
           const original = payBtn.innerHTML;
           payBtn.innerHTML = '<i data-feather="loader" class="w-5 h-5 animate-spin"></i><span>Procesando...</span>';
-          feather.replace();
+          runFeatherReplace();
           setTimeout(() => {
             const balEl = document.getElementById('balanceAmount');
             if (balEl) {
@@ -3448,7 +3681,7 @@ html,body{ background:#05070f !important; }
             showGlobalOverlay({ type:'success', message:'Recarga exitosa', duration: 1600, onDone: () => { closeTopUp(); }});
             payBtn.disabled = false;
             payBtn.innerHTML = original;
-            feather.replace();
+            runFeatherReplace();
           }, 1200);
         }
         // Verification event listeners
@@ -3559,7 +3792,7 @@ html,body{ background:#05070f !important; }
       document.getElementById('dashboardSection')?.classList.remove('hidden');
       // Init libraries and dynamic bits
       if (window.AOS) { AOS.init({ duration:600, once:true }); }
-      if (window.feather) { feather.replace(); }
+      runFeatherReplace();
       // La fecha y hora serán actualizadas en tiempo real por el script live-datetime
       try { window.ActivityTracker?.render(); } catch(_){}
     }
@@ -5398,10 +5631,10 @@ html,body{ background:#05070f !important; }
 
     function fmtCOP(n){ return `$${(Math.round(n)||0).toLocaleString('es-CO')}`; }
 
-    function openFood(){ if (!foodModal) return; foodModal.classList.remove('hidden'); foodModal.classList.add('flex'); feather.replace(); window.trapFocus?.(foodModal); }
+    function openFood(){ if (!foodModal) return; foodModal.classList.remove('hidden'); foodModal.classList.add('flex'); if (window.feather && typeof window.feather.replace === 'function') { window.feather.replace(); } window.trapFocus?.(foodModal); }
     function closeFood(){ if (!foodModal) return; foodModal.classList.add('hidden'); foodModal.classList.remove('flex'); showMenu(); clearSuccess(); window.releaseFocus?.(); }
     function showMenu(){ menuView.classList.remove('hidden'); checkoutView.classList.add('hidden'); successView.classList.add('hidden'); cartBar.classList.remove('hidden'); }
-    function showCheckout(){ menuView.classList.add('hidden'); checkoutView.classList.remove('hidden'); successView.classList.add('hidden'); cartBar.classList.add('hidden'); feather.replace(); }
+    function showCheckout(){ menuView.classList.add('hidden'); checkoutView.classList.remove('hidden'); successView.classList.add('hidden'); cartBar.classList.add('hidden'); if (window.feather && typeof window.feather.replace === 'function') { window.feather.replace(); } }
     function showSuccess(){ menuView.classList.add('hidden'); checkoutView.classList.add('hidden'); successView.classList.remove('hidden'); cartBar.classList.add('hidden'); }
     function clearSuccess(){ successMsg.textContent=''; }
 
@@ -5437,7 +5670,7 @@ html,body{ background:#05070f !important; }
         dec.addEventListener('click', ()=>{ const q=Math.max(0, qtyOf(item.id)-1); setQty(item.id, q); qtyEl.textContent = q; });
         foodGrid.appendChild(card);
       });
-      feather.replace();
+      if (window.feather && typeof window.feather.replace === 'function') { window.feather.replace(); }
     }
 
     function totals(){
@@ -5534,7 +5767,7 @@ html,body{ background:#05070f !important; }
     window.openFoodModal = () => { openFood(); renderMenu(); renderCartBar(); };
     closeFoodBtn?.addEventListener('click', closeFood);
     foodModal?.addEventListener('click', (e)=>{ if (e.target === foodModal) closeFood(); });
-    goToCheckoutBtn?.addEventListener('click', () => { showCheckout(); renderCheckout(); bindCheckoutInputs(); feather.replace(); });
+    goToCheckoutBtn?.addEventListener('click', () => { showCheckout(); renderCheckout(); bindCheckoutInputs(); if (window.feather && typeof window.feather.replace === 'function') { window.feather.replace(); } });
     payBtn?.addEventListener('click', handlePayment);
     closeFoodSuccess?.addEventListener('click', closeFood);
   })();
@@ -5890,10 +6123,6 @@ html,body{ background:#05070f !important; }
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
     })();
   </script>
-</body>
-</html>
-
-
   <script id="flash-script">
   (function(){
     let flashStream = null;
@@ -6028,3 +6257,5 @@ html,body{ background:#05070f !important; }
     window.addEventListener('beforeunload', stopFlash);
   })();
   </script>
+</body>
+</html>

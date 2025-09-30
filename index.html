@@ -57,6 +57,14 @@
       /* Clase para ocultar el video hasta que la cámara esté lista */
       #qrVideo.media-hidden { opacity: 0; }
     </style>
+
+
+    <style id="button-compact-style">
+      button {
+        white-space: normal !important;
+        overflow-wrap: anywhere;
+        line-height: 1.35;
+      }
     <style id="button-compact-style">
       button[class~="text-2xl"],
       button[class~="text-xl"],
@@ -191,8 +199,6 @@
         border-radius: 0.4rem !important;
       }
     </style>
-
-
     <script id="profile-script">
     (function() {
       const PROFILE_KEY = 'userProfile';
@@ -1079,6 +1085,11 @@ html,body{ background:#05070f !important; }
   </style>
 <style id="quick-pretty-pass">
   /* Quick visual polish focused on the login screen */
+
+  #loginSection{
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+  }
   #loginSection [class*="bg-america-dark"]{ border-radius: 18px !important; box-shadow: 0 20px 60px rgba(0,0,0,.35) !important; }
   #loginSection h1{ letter-spacing:.2px; line-height:1.18; }
   #loginSection p{ color:#d1d5db; }
@@ -1604,7 +1615,7 @@ html,body{ background:#05070f !important; }
     #iosNfcModal, #iosNfcBackdrop{ min-height:100dvh; }
   }
 </style>
-<div id="loginSection" class="relative isolate min-h-screen overflow-hidden">
+<div id="loginSection" class="relative isolate min-h-screen overflow-x-hidden overflow-y-auto lg:overflow-hidden">
   <div class="absolute inset-0 -z-10">
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(248,113,113,0.22),_transparent_55%)]"></div>
     <div class="absolute inset-0 bg-[linear-gradient(130deg,_rgba(2,6,23,0.92),_rgba(88,28,135,0.35),_rgba(15,23,42,0.9))]"></div>
@@ -1612,7 +1623,7 @@ html,body{ background:#05070f !important; }
     <div class="absolute inset-y-0 right-0 hidden w-2/3 bg-gradient-to-l from-black/70 to-transparent lg:block"></div>
   </div>
   <div class="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 py-12 sm:px-10 lg:px-16">
-    <div class="grid flex-1 items-center gap-12 py-6 lg:grid-cols-[1.08fr_minmax(0,1fr)] lg:py-12">
+    <div class="grid flex-1 items-start gap-12 py-6 lg:grid-cols-[1.08fr_minmax(0,1fr)] lg:items-center lg:py-12">
       <aside class="order-2 space-y-10 text-slate-100 lg:order-1">
         <div class="rounded-3xl border border-white/10 bg-white/10 p-8 shadow-2xl backdrop-blur-2xl">
           <span class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/70">

@@ -354,22 +354,10 @@
     min-height: 100vh;
     scroll-behavior: smooth;
   }
-  /* Responsive container for main content */
-  main {
-    width: 100%;
-    max-width: 420px;
+  /* Responsive container for the authentication panel */
+  .auth-shell {
+    width: min(100%, clamp(22rem, 90vw, 44rem));
     margin: 0 auto;
-    padding: 1.5rem 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 80vh;
-  }
-  @media (min-width: 640px){
-    main { max-width: 540px; padding: 2.5rem 2rem; }
-  }
-  @media (min-width: 1024px){
-    main { max-width: 700px; padding: 3rem 2.5rem; }
   }
   /* Glassmorphism cards/panels */
   .bg-america-dark\/90, .bg-america-dark\/95, .bg-gray-900.rounded-xl, .glass-card {
@@ -612,7 +600,8 @@
     }
   }
   /* Responsive header/footer */
-  header, footer {
+  body:not(.dashboard-mode) header,
+  body:not(.dashboard-mode) footer {
     width: 100%;
     max-width: 700px;
     margin: 0 auto;
@@ -620,16 +609,7 @@
     padding-right: 1rem;
   }
   /* Responsive for login section */
-  #loginSection > main {
-    max-width: 420px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 1.5rem 0.5rem;
-  }
   @media (max-width: 480px){
-    #loginSection > main {
-      padding: 1rem 0.2rem;
-    }
     .bg-america-dark\/90, .bg-america-dark\/95, .bg-gray-900.rounded-xl {
       padding: 1.1rem !important;
     }
@@ -964,7 +944,6 @@ html,body{ background:#05070f !important; }
   </style>
 <style id="quick-pretty-pass">
   /* Quick visual polish focused on the login screen */
-  #loginSection main{ max-width: 440px; }
   #loginSection [class*="bg-america-dark"]{ border-radius: 18px !important; box-shadow: 0 20px 60px rgba(0,0,0,.35) !important; }
   #loginSection h1{ letter-spacing:.2px; line-height:1.18; }
   #loginSection p{ color:#d1d5db; }
@@ -1576,8 +1555,8 @@ html,body{ background:#05070f !important; }
           </div>
         </div>
       </aside>
-      <div class="order-1 w-full max-w-xl lg:order-2 lg:justify-self-end">
-        <div role="main" class="rounded-3xl border border-white/10 bg-slate-950/70 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
+      <div class="order-1 w-full lg:order-2 lg:justify-self-end">
+        <div role="main" class="auth-shell rounded-3xl border border-white/10 bg-slate-950/70 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
           <div class="space-y-8">
             <div class="space-y-4 text-center">
               <div class="relative mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-rose-500 via-red-500 to-red-600 shadow-2xl ring-4 ring-white/10">
@@ -5891,10 +5870,6 @@ html,body{ background:#05070f !important; }
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
     })();
   </script>
-</body>
-</html>
-
-
   <script id="flash-script">
   (function(){
     let flashStream = null;
@@ -6029,3 +6004,5 @@ html,body{ background:#05070f !important; }
     window.addEventListener('beforeunload', stopFlash);
   })();
   </script>
+</body>
+</html>

@@ -64,6 +64,10 @@
         overflow-wrap: anywhere;
         line-height: 1.35;
       }
+
+    <style id="button-compact-style">
+
+
       button[class~="text-2xl"],
       button[class~="text-xl"],
       button[class~="text-lg"] {
@@ -197,7 +201,6 @@
         border-radius: 0.4rem !important;
       }
     </style>
-
     <script id="profile-script">
     (function() {
       const PROFILE_KEY = 'userProfile';
@@ -473,8 +476,13 @@
     --text: #E5E7EB;
     --radius: 16px;
     --space-1: .25rem; --space-2: .5rem; --space-3: .75rem; --space-4: 1rem; --space-6: 1.5rem;
+
     --font-size-base: clamp(12.5px, 0.8vw + 7px, 14px);
     --line-height-base: 1.45;
+
+    --font-size-base: clamp(14px, 0.9vw + 8px, 15.5px);
+    --line-height-base: 1.5;
+
     --shadow-soft: 0 8px 32px rgba(0,0,0,0.18), 0 1.5px 0 rgba(255,255,255,0.04) inset;
     --shadow-btn: 0 2px 12px rgba(211,47,47,0.13), 0 1.5px 0 rgba(255,255,255,0.06) inset;
     --transition: all 180ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -499,6 +507,12 @@
     width: min(100%, clamp(20rem, 85vw, 36rem));
     margin: 0 auto;
     padding: clamp(1.35rem, 2.5vw, 1.95rem) !important;
+
+    margin: 0 auto;
+    padding: clamp(1.35rem, 2.5vw, 1.95rem) !important;
+    width: min(100%, clamp(22rem, 90vw, 44rem));
+    margin: 0 auto;
+
   }
   /* Glassmorphism cards/panels */
   .bg-america-dark\/90, .bg-america-dark\/95, .bg-gray-900.rounded-xl, .glass-card {
@@ -1123,10 +1137,17 @@ html,body{ background:#05070f !important; }
 </style>
 <style id="login-comfort">
   #loginSection {
+
     --login-heading: clamp(1.55rem, 1.4vw + 1.15rem, 1.95rem);
     --login-subheading: clamp(1.1rem, 1vw + 0.95rem, 1.45rem);
     --login-body: clamp(0.82rem, 0.35vw + 0.74rem, 0.92rem);
     --login-small: clamp(0.7rem, 0.3vw + 0.64rem, 0.78rem);
+
+    --login-heading: clamp(1.85rem, 1.6vw + 1.35rem, 2.25rem);
+    --login-subheading: clamp(1.35rem, 1.3vw + 1.05rem, 1.85rem);
+    --login-body: clamp(0.9rem, 0.4vw + 0.82rem, 0.98rem);
+    --login-small: clamp(0.76rem, 0.35vw + 0.7rem, 0.85rem);
+
   }
   #loginSection .login-wrapper {
     gap: clamp(1.75rem, 3.5vw, 2.6rem);
@@ -1134,11 +1155,13 @@ html,body{ background:#05070f !important; }
   #loginSection .login-aside {
     gap: clamp(1.5rem, 3vw, 2.25rem);
   }
+
   #loginSection .login-aside p,
   #loginSection .login-aside li {
     font-size: clamp(0.78rem, 0.35vw + 0.7rem, 0.9rem) !important;
     line-height: 1.4;
   }
+
   #loginSection .login-aside .rounded-3xl,
   #loginSection .login-aside .rounded-2xl {
     padding: clamp(1.1rem, 2.8vw, 1.6rem) !important;
@@ -1148,7 +1171,11 @@ html,body{ background:#05070f !important; }
     line-height: 1.2;
   }
   #loginSection [class~="text-3xl"] {
+
     font-size: clamp(1.25rem, 1.2vw + 0.95rem, 1.6rem) !important;
+
+    font-size: clamp(1.45rem, 1.4vw + 1.05rem, 1.85rem) !important;
+
     line-height: 1.22;
   }
   #loginSection [class~="text-xl"] {
@@ -1156,11 +1183,19 @@ html,body{ background:#05070f !important; }
     line-height: 1.25;
   }
   #loginSection [class~="text-lg"] {
+
     font-size: clamp(0.96rem, 0.45vw + 0.88rem, 1.1rem) !important;
   }
   #loginSection [class~="text-base"] {
     font-size: var(--login-body) !important;
     line-height: 1.42;
+
+    font-size: clamp(1.05rem, 0.5vw + 0.95rem, 1.2rem) !important;
+  }
+  #loginSection [class~="text-base"] {
+    font-size: var(--login-body) !important;
+    line-height: 1.5;
+
   }
   #loginSection [class~="text-sm"] {
     font-size: var(--login-small) !important;
@@ -1180,6 +1215,7 @@ html,body{ background:#05070f !important; }
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
   #loginSection .login-panel .space-y-8 > * + * {
     margin-top: clamp(1.15rem, 2vw, 1.6rem) !important;
   }
@@ -1215,6 +1251,7 @@ html,body{ background:#05070f !important; }
   #loginSection .login-stat-grid span {
     font-size: clamp(0.72rem, 0.3vw + 0.66rem, 0.85rem) !important;
   }
+
   @media (min-width: 1024px) {
     #loginSection .login-wrapper {
       gap: clamp(2rem, 4vw, 3.25rem);
@@ -1724,6 +1761,9 @@ html,body{ background:#05070f !important; }
   <div class="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 py-12 sm:px-10 lg:px-16">
     <div class="grid flex-1 items-start gap-12 py-6 lg:grid-cols-[1.08fr_minmax(0,1fr)] lg:items-center lg:py-12 login-wrapper">
       <aside class="order-2 space-y-10 text-slate-100 lg:order-1 login-aside">
+
+    <div class="grid flex-1 items-start gap-12 py-6 lg:grid-cols-[1.08fr_minmax(0,1fr)] lg:items-center lg:py-12">
+      <aside class="order-2 space-y-10 text-slate-100 lg:order-1">
         <div class="rounded-3xl border border-white/10 bg-white/10 p-8 shadow-2xl backdrop-blur-2xl">
           <span class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/70">
             <i data-feather="zap" class="h-4 w-4"></i>
@@ -1802,6 +1842,8 @@ html,body{ background:#05070f !important; }
       </aside>
       <div class="order-1 w-full lg:order-2 lg:justify-self-end">
         <div role="main" class="auth-shell rounded-3xl border border-white/10 bg-slate-950/70 p-6 shadow-2xl backdrop-blur-xl sm:p-8 login-panel">
+
+        <div role="main" class="auth-shell rounded-3xl border border-white/10 bg-slate-950/70 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
           <div class="space-y-8">
             <div class="space-y-4 text-center">
               <div class="relative mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-rose-500 via-red-500 to-red-600 shadow-2xl ring-4 ring-white/10">

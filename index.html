@@ -57,8 +57,6 @@
       /* Clase para ocultar el video hasta que la cámara esté lista */
       #qrVideo.media-hidden { opacity: 0; }
     </style>
-
-
     <style id="button-compact-style">
       button {
         white-space: normal !important;
@@ -66,6 +64,7 @@
         line-height: 1.35;
       }
     <style id="button-compact-style">
+
       button[class~="text-2xl"],
       button[class~="text-xl"],
       button[class~="text-lg"] {
@@ -474,7 +473,7 @@
     --text: #E5E7EB;
     --radius: 16px;
     --space-1: .25rem; --space-2: .5rem; --space-3: .75rem; --space-4: 1rem; --space-6: 1.5rem;
-    --font-size-base: 16px;
+    --font-size-base: clamp(14px, 0.9vw + 8px, 15.5px);
     --line-height-base: 1.5;
     --shadow-soft: 0 8px 32px rgba(0,0,0,0.18), 0 1.5px 0 rgba(255,255,255,0.04) inset;
     --shadow-btn: 0 2px 12px rgba(211,47,47,0.13), 0 1.5px 0 rgba(255,255,255,0.06) inset;
@@ -497,6 +496,9 @@
   }
   /* Responsive container for the authentication panel */
   .auth-shell {
+    width: min(100%, clamp(20rem, 85vw, 36rem));
+    margin: 0 auto;
+    padding: clamp(1.35rem, 2.5vw, 1.95rem) !important;
     width: min(100%, clamp(22rem, 90vw, 44rem));
     margin: 0 auto;
   }
@@ -1085,7 +1087,6 @@ html,body{ background:#05070f !important; }
   </style>
 <style id="quick-pretty-pass">
   /* Quick visual polish focused on the login screen */
-
   #loginSection{
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-y: contain;
@@ -1121,6 +1122,87 @@ html,body{ background:#05070f !important; }
   /* QR modal frame subtle glow */
   #qrModal .rounded-xl{ box-shadow: 0 18px 50px rgba(0,0,0,.45) !important; }
   #qrModal [class*="border-white"]{ box-shadow: 0 0 0 1px rgba(255,255,255,.4) inset; }
+</style>
+<style id="login-comfort">
+  #loginSection {
+    --login-heading: clamp(1.85rem, 1.6vw + 1.35rem, 2.25rem);
+    --login-subheading: clamp(1.35rem, 1.3vw + 1.05rem, 1.85rem);
+    --login-body: clamp(0.9rem, 0.4vw + 0.82rem, 0.98rem);
+    --login-small: clamp(0.76rem, 0.35vw + 0.7rem, 0.85rem);
+  }
+  #loginSection .login-wrapper {
+    gap: clamp(1.75rem, 3.5vw, 2.6rem);
+  }
+  #loginSection .login-aside {
+    gap: clamp(1.5rem, 3vw, 2.25rem);
+  }
+  #loginSection .login-aside .rounded-3xl,
+  #loginSection .login-aside .rounded-2xl {
+    padding: clamp(1.1rem, 2.8vw, 1.6rem) !important;
+  }
+  #loginSection [class~="text-4xl"] {
+    font-size: var(--login-heading) !important;
+    line-height: 1.2;
+  }
+  #loginSection [class~="text-3xl"] {
+    font-size: clamp(1.45rem, 1.4vw + 1.05rem, 1.85rem) !important;
+    line-height: 1.22;
+  }
+  #loginSection [class~="text-xl"] {
+    font-size: var(--login-subheading) !important;
+    line-height: 1.25;
+  }
+  #loginSection [class~="text-lg"] {
+    font-size: clamp(1.05rem, 0.5vw + 0.95rem, 1.2rem) !important;
+  }
+  #loginSection [class~="text-base"] {
+    font-size: var(--login-body) !important;
+    line-height: 1.5;
+  }
+  #loginSection [class~="text-sm"] {
+    font-size: var(--login-small) !important;
+  }
+  #loginSection [class~="text-xs"] {
+    font-size: clamp(0.66rem, 0.3vw + 0.6rem, 0.72rem) !important;
+    letter-spacing: 0.24em !important;
+  }
+  #loginSection .login-panel {
+    padding: clamp(1.35rem, 3vw, 1.9rem) !important;
+    border-radius: 20px !important;
+  }
+  #loginSection .login-panel .space-y-8 > * + * {
+    margin-top: clamp(1.15rem, 2vw, 1.6rem) !important;
+  }
+  #loginSection .login-panel [class*="space-y-4"] > * + * {
+    margin-top: clamp(0.75rem, 1.6vw, 1rem) !important;
+  }
+  #loginSection .login-panel input,
+  #loginSection .login-panel select {
+    padding: 0.55rem 0.85rem !important;
+    font-size: var(--login-body);
+  }
+  #loginSection .login-panel label {
+    font-size: var(--login-small);
+    letter-spacing: 0.02em;
+  }
+  #loginSection .login-panel button {
+    min-height: 2.5rem;
+    padding: 0.55rem 0.95rem !important;
+  }
+  #loginSection .login-panel .rounded-full {
+    letter-spacing: 0.22em !important;
+  }
+  #loginSection .login-stat-grid {
+    gap: clamp(0.75rem, 2.5vw, 1.1rem) !important;
+  }
+  #loginSection .login-stat-grid > div {
+    padding: clamp(0.85rem, 2.3vw, 1.2rem) !important;
+  }
+  @media (min-width: 1024px) {
+    #loginSection .login-wrapper {
+      gap: clamp(2rem, 4vw, 3.25rem);
+    }
+  }
 </style>
 <style id="minimal-dashboard-refresh">
   :root {
@@ -1623,6 +1705,8 @@ html,body{ background:#05070f !important; }
     <div class="absolute inset-y-0 right-0 hidden w-2/3 bg-gradient-to-l from-black/70 to-transparent lg:block"></div>
   </div>
   <div class="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 py-12 sm:px-10 lg:px-16">
+    <div class="grid flex-1 items-start gap-12 py-6 lg:grid-cols-[1.08fr_minmax(0,1fr)] lg:items-center lg:py-12 login-wrapper">
+      <aside class="order-2 space-y-10 text-slate-100 lg:order-1 login-aside">
     <div class="grid flex-1 items-start gap-12 py-6 lg:grid-cols-[1.08fr_minmax(0,1fr)] lg:items-center lg:py-12">
       <aside class="order-2 space-y-10 text-slate-100 lg:order-1">
         <div class="rounded-3xl border border-white/10 bg-white/10 p-8 shadow-2xl backdrop-blur-2xl">
@@ -1632,7 +1716,7 @@ html,body{ background:#05070f !important; }
           </span>
           <h2 class="mt-6 text-4xl font-semibold leading-tight text-white sm:text-[2.6rem]">Tu acceso al Pascual, sin filas ni complicaciones.</h2>
           <p class="mt-4 text-base text-white/70">Recarga tu manilla, verifica tu QR y disfruta beneficios exclusivos diseñados para la hinchada escarlata.</p>
-          <div class="mt-8 grid gap-4 sm:grid-cols-3">
+          <div class="mt-8 grid gap-4 sm:grid-cols-3 login-stat-grid">
             <div class="rounded-2xl border border-white/20 bg-black/30 px-4 py-5 text-white/80 shadow-lg backdrop-blur">
               <p class="text-xs uppercase tracking-[0.25em] text-white/50">Ingresos hoy</p>
               <p class="mt-2 text-3xl font-semibold text-white">12.542</p>
@@ -1702,6 +1786,7 @@ html,body{ background:#05070f !important; }
         </div>
       </aside>
       <div class="order-1 w-full lg:order-2 lg:justify-self-end">
+        <div role="main" class="auth-shell rounded-3xl border border-white/10 bg-slate-950/70 p-6 shadow-2xl backdrop-blur-xl sm:p-8 login-panel">
         <div role="main" class="auth-shell rounded-3xl border border-white/10 bg-slate-950/70 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
           <div class="space-y-8">
             <div class="space-y-4 text-center">

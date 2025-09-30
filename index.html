@@ -57,13 +57,14 @@
       /* Clase para ocultar el video hasta que la cámara esté lista */
       #qrVideo.media-hidden { opacity: 0; }
     </style>
-
     <style id="button-compact-style">
       button {
         white-space: normal !important;
         overflow-wrap: anywhere;
         line-height: 1.35;
       }
+    <style id="button-compact-style">
+
       button[class~="text-2xl"],
       button[class~="text-xl"],
       button[class~="text-lg"] {
@@ -197,7 +198,6 @@
         border-radius: 0.4rem !important;
       }
     </style>
-
     <script id="profile-script">
     (function() {
       const PROFILE_KEY = 'userProfile';
@@ -499,6 +499,8 @@
     width: min(100%, clamp(20rem, 85vw, 36rem));
     margin: 0 auto;
     padding: clamp(1.35rem, 2.5vw, 1.95rem) !important;
+    width: min(100%, clamp(22rem, 90vw, 44rem));
+    margin: 0 auto;
   }
   /* Glassmorphism cards/panels */
   .bg-america-dark\/90, .bg-america-dark\/95, .bg-gray-900.rounded-xl, .glass-card {
@@ -1705,6 +1707,8 @@ html,body{ background:#05070f !important; }
   <div class="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 py-12 sm:px-10 lg:px-16">
     <div class="grid flex-1 items-start gap-12 py-6 lg:grid-cols-[1.08fr_minmax(0,1fr)] lg:items-center lg:py-12 login-wrapper">
       <aside class="order-2 space-y-10 text-slate-100 lg:order-1 login-aside">
+    <div class="grid flex-1 items-start gap-12 py-6 lg:grid-cols-[1.08fr_minmax(0,1fr)] lg:items-center lg:py-12">
+      <aside class="order-2 space-y-10 text-slate-100 lg:order-1">
         <div class="rounded-3xl border border-white/10 bg-white/10 p-8 shadow-2xl backdrop-blur-2xl">
           <span class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/70">
             <i data-feather="zap" class="h-4 w-4"></i>
@@ -1783,6 +1787,7 @@ html,body{ background:#05070f !important; }
       </aside>
       <div class="order-1 w-full lg:order-2 lg:justify-self-end">
         <div role="main" class="auth-shell rounded-3xl border border-white/10 bg-slate-950/70 p-6 shadow-2xl backdrop-blur-xl sm:p-8 login-panel">
+        <div role="main" class="auth-shell rounded-3xl border border-white/10 bg-slate-950/70 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
           <div class="space-y-8">
             <div class="space-y-4 text-center">
               <div class="relative mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-rose-500 via-red-500 to-red-600 shadow-2xl ring-4 ring-white/10">

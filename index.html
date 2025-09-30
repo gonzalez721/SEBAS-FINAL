@@ -349,8 +349,8 @@
         profileModal?.classList.remove('hidden');
         profileModal?.classList.add('flex');
         window.trapFocus?.(profileModal);
-        if (window.feather && typeof window.feather.replace === 'function') {
-          window.feather.replace();
+        if (typeof runFeatherReplace === 'function') {
+          runFeatherReplace();
         }
       }
 
@@ -3154,6 +3154,8 @@ html,body{ background:#05070f !important; }
           }
         };
 
+        window.runFeatherReplace = runFeatherReplace;
+
         runFeatherReplace();
 
         let qrPurpose = 'login';
@@ -4357,7 +4359,7 @@ html,body{ background:#05070f !important; }
         }
         target.appendChild(el);
       });
-      if (typeof feather !== 'undefined') feather.replace();
+      if (typeof runFeatherReplace === 'function') runFeatherReplace();
     }
 
     function renderTop(list){
@@ -4699,7 +4701,7 @@ html,body{ background:#05070f !important; }
         const btn=document.createElement('button'); btn.className='mt-3 text-sm bg-america-red hover:bg-red-700 py-2 px-3 rounded-lg'; btn.textContent=p.cta; btn.addEventListener('click', p.action); card.appendChild(btn);
         box.appendChild(card);
       });
-      if (typeof feather!=='undefined') feather.replace();
+      if (typeof runFeatherReplace === 'function') runFeatherReplace();
 
       // Chips rápidos
       if (quick){
@@ -4709,7 +4711,7 @@ html,body{ background:#05070f !important; }
           { icon:'star', label:'Experiencias', on: ()=>{ document.getElementById('openExperiencesBtn')?.click(); } }
         ];
         pills.forEach(x=>{ const b=document.createElement('button'); b.className='promo-pill flex items-center gap-2'; b.innerHTML=`<i data-feather="${x.icon}"></i><span>${x.label}</span>`; b.addEventListener('click', x.on); quick.appendChild(b); });
-        if (typeof feather!=='undefined') feather.replace();
+        if (typeof runFeatherReplace === 'function') runFeatherReplace();
       }
     }
 
@@ -5631,10 +5633,10 @@ html,body{ background:#05070f !important; }
 
     function fmtCOP(n){ return `$${(Math.round(n)||0).toLocaleString('es-CO')}`; }
 
-    function openFood(){ if (!foodModal) return; foodModal.classList.remove('hidden'); foodModal.classList.add('flex'); if (window.feather && typeof window.feather.replace === 'function') { window.feather.replace(); } window.trapFocus?.(foodModal); }
+    function openFood(){ if (!foodModal) return; foodModal.classList.remove('hidden'); foodModal.classList.add('flex'); if (typeof runFeatherReplace === 'function') { runFeatherReplace(); } window.trapFocus?.(foodModal); }
     function closeFood(){ if (!foodModal) return; foodModal.classList.add('hidden'); foodModal.classList.remove('flex'); showMenu(); clearSuccess(); window.releaseFocus?.(); }
     function showMenu(){ menuView.classList.remove('hidden'); checkoutView.classList.add('hidden'); successView.classList.add('hidden'); cartBar.classList.remove('hidden'); }
-    function showCheckout(){ menuView.classList.add('hidden'); checkoutView.classList.remove('hidden'); successView.classList.add('hidden'); cartBar.classList.add('hidden'); if (window.feather && typeof window.feather.replace === 'function') { window.feather.replace(); } }
+    function showCheckout(){ menuView.classList.add('hidden'); checkoutView.classList.remove('hidden'); successView.classList.add('hidden'); cartBar.classList.add('hidden'); if (typeof runFeatherReplace === 'function') { runFeatherReplace(); } }
     function showSuccess(){ menuView.classList.add('hidden'); checkoutView.classList.add('hidden'); successView.classList.remove('hidden'); cartBar.classList.add('hidden'); }
     function clearSuccess(){ successMsg.textContent=''; }
 
@@ -5670,7 +5672,7 @@ html,body{ background:#05070f !important; }
         dec.addEventListener('click', ()=>{ const q=Math.max(0, qtyOf(item.id)-1); setQty(item.id, q); qtyEl.textContent = q; });
         foodGrid.appendChild(card);
       });
-      if (window.feather && typeof window.feather.replace === 'function') { window.feather.replace(); }
+      if (typeof runFeatherReplace === 'function') { runFeatherReplace(); }
     }
 
     function totals(){
@@ -5767,7 +5769,7 @@ html,body{ background:#05070f !important; }
     window.openFoodModal = () => { openFood(); renderMenu(); renderCartBar(); };
     closeFoodBtn?.addEventListener('click', closeFood);
     foodModal?.addEventListener('click', (e)=>{ if (e.target === foodModal) closeFood(); });
-    goToCheckoutBtn?.addEventListener('click', () => { showCheckout(); renderCheckout(); bindCheckoutInputs(); if (window.feather && typeof window.feather.replace === 'function') { window.feather.replace(); } });
+    goToCheckoutBtn?.addEventListener('click', () => { showCheckout(); renderCheckout(); bindCheckoutInputs(); if (typeof runFeatherReplace === 'function') { runFeatherReplace(); } });
     payBtn?.addEventListener('click', handlePayment);
     closeFoodSuccess?.addEventListener('click', closeFood);
   })();
@@ -5813,7 +5815,7 @@ html,body{ background:#05070f !important; }
         empty.className = 'bg-gray-900 rounded-xl p-5 border border-gray-800 text-sm text-gray-400';
         empty.textContent = 'Aún no hay actividad. ¡Empieza recargando, pidiendo o jugando!';
         box.appendChild(empty);
-        if (window.feather) feather.replace();
+        if (typeof runFeatherReplace === 'function') runFeatherReplace();
         return;
       }
       const shown = expanded ? list : list.slice(0,5);
@@ -5849,7 +5851,7 @@ html,body{ background:#05070f !important; }
         wrap.appendChild(btn);
         box.appendChild(wrap);
       }
-      if (window.feather) feather.replace();
+      if (typeof runFeatherReplace === 'function') runFeatherReplace();
     }
 
     function add(evt){
